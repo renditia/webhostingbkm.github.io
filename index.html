@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<script>
+	function authuser(){
+
+		// inisiasi array
+		var users = ['Rendi', 'Tama', 'Wanto', 'Hadi', 'Awal'];
+		var passwords = ['triklin123', 'bkm001', 'telkom123', 'Japati121'];
+
+		var usernm = document.getElementById("username").value;
+		var passwd =document.getElementById("password").value;
+
+		// che input username & Passowrd
+		if ((usernm == null || usernm =='' ) || (passwd == null || passwd =='' ) ){
+			return;
+		}else{
+				// chek data input
+				for (var i = 0; i < users.length; i++) {
+					
+					if(users[i] == usernm &&  passwords[i] == passwd   ){
+							alert("Succes Login");
+							break;
+					} else{
+						alert("Fail Login");
+						break;
+					}
+				}	 
+		}
+	}
+</script>
+
+<body>
+	<div class="kotak_login">
+		<img class="imglog" src="images.png" alt="">
+		<p class="tulisan_login">Silahkan Login</p>
+
+		<form>
+			<label>Username</label>
+			<input type="text" id="username" name="username" class="form_login" placeholder="Username" required>
+
+			<label>Password</label>
+			<input type="text" id="password" name="password" class="form_login" placeholder="Password" required>
+
+			<button onclick="authuser()">Login</button>
+			<!-- <input type="submit" onclick="authuser()" class="tombol_login" value="LOGIN"> -->
+	</div>
+
+
+</body>
+</html>
